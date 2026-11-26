@@ -1,0 +1,100 @@
+/* =========================================================
+   LOADER
+   ========================================================= */
+#loader{position:fixed;inset:0;z-index:300;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+  background:radial-gradient(circle at 50% 40%,#7a1f2b,#430d16 70%);color:var(--gold-light);transition:opacity .8s ease,visibility .8s}
+#loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.ld-ring{position:relative;width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:1.5px solid rgba(243,221,154,.35)}
+.ld-ring::before,.ld-ring::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid transparent;
+  border-top-color:var(--gold-bright);border-bottom-color:var(--gold);animation:spin 1.8s linear infinite}
+.ld-ring::after{inset:-20px;border-top-color:transparent;border-bottom-color:transparent;border-left-color:rgba(243,221,154,.5);animation-duration:3s;animation-direction:reverse}
+.ld-om{font-family:var(--font-dv-display);font-size:54px;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;animation:glow 2.2s ease-in-out infinite}
+.ld-names{font-family:var(--font-names);font-weight:700;font-size:clamp(24px,7vw,34px);letter-spacing:2px;margin-top:14px}
+.ld-names i{font-family:var(--font-script);font-weight:400;font-style:normal;color:var(--blush)}
+.ld-text{font-size:15px;opacity:.85}
+.ld-bar{width:min(60vw,240px);height:3px;border-radius:3px;background:rgba(243,221,154,.2);overflow:hidden}
+.ld-bar b{display:block;height:100%;width:0;background:var(--gold-grad);box-shadow:0 0 10px var(--gold-bright);transition:width .35s ease}
+
+/* =========================================================
+   WELCOME COVER — bride & groom greeting with Namaste
+   ========================================================= */
+#cover{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto minmax(0,1fr) auto;
+  grid-template-areas:"title title" "stage stage" "bride groom";justify-items:center;align-items:center;
+  padding:2.2vh 10px 0;overflow:hidden;
+  background:radial-gradient(circle at 50% 18%,#fff6e3 0%,#f3dcb8 45%,#e2b985 100%)}
+#cover::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg at 50% 30%,rgba(255,255,255,.28) 0 4deg,transparent 4deg 12deg);
+  -webkit-mask-image:radial-gradient(circle at 50% 30%,#000,transparent 70%);mask-image:radial-gradient(circle at 50% 30%,#000,transparent 70%);animation:rays 60s linear infinite;transform-origin:50% 30%}
+#cover > *{position:relative;z-index:3}
+#cover > .toran{position:absolute;z-index:2}
+.cv-title{grid-area:title;text-align:center;padding-top:18px}
+.cv-guest{font-size:clamp(16px,4vw,20px);color:var(--maroon-2);margin-bottom:2px}
+.cv-welcome{font-size:clamp(34px,9vw,60px);line-height:1.15;background:var(--gold-grad);background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 5s linear infinite;
+  filter:drop-shadow(0 2px 0 rgba(94,20,32,.25))}
+.cv-sub{font-size:clamp(15px,3.8vw,20px);color:var(--maroon-2);opacity:.9;margin-top:2px}
+
+.env-stage{grid-area:stage;width:min(78vw,330px);height:min(37vh,420px)}
+.env-flower.bl,.env-flower.br{opacity:.3}
+.env-flower.tl,.env-flower.tr{opacity:.8}
+.seal{width:100px;height:100px;top:30%}
+.tap-hint{font-size:10px;letter-spacing:1.5px;bottom:3.5%;padding:0 8px}
+
+.char{position:relative;height:min(35vh,330px);aspect-ratio:1/2;align-self:end;margin-bottom:10px}
+.char.bride{grid-area:bride;justify-self:end;margin-right:-14px}
+.char.groom{grid-area:groom;justify-self:start;margin-left:-14px}
+.char-svg{display:block;height:100%;width:auto;overflow:visible;filter:drop-shadow(0 8px 10px rgba(80,30,20,.25))}
+
+.bubble{position:absolute;top:-9%;left:50%;transform:translateX(-50%) scale(0);white-space:nowrap;z-index:5;
+  font-size:clamp(13px,3.4vw,17px);color:var(--maroon-2);background:#fffaf0;border:1.5px solid var(--gold);
+  padding:4px 12px;border-radius:14px;box-shadow:0 6px 14px rgba(80,30,20,.2)}
+.bubble::after{content:"";position:absolute;left:50%;bottom:-7px;width:10px;height:10px;background:#fffaf0;
+  border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:translateX(-50%) rotate(45deg)}
+#cover.go .bubble{animation:pop .7s cubic-bezier(.3,1.6,.5,1) 2.1s forwards}
+#cover.go .groom .bubble{animation-delay:2.5s}
+@keyframes pop{to{transform:translateX(-50%) scale(1)}}
+
+#cover:not(.go) .char,#cover:not(.go) .cv-title,#cover:not(.go) .env-stage{opacity:0}
+#cover.go .char.bride{animation:inL 1.3s cubic-bezier(.2,.9,.3,1.15) .5s both}
+#cover.go .char.groom{animation:inR 1.3s cubic-bezier(.2,.9,.3,1.15) .7s both}
+#cover.go .cv-title{animation:dropIn 1s cubic-bezier(.2,.9,.3,1.2) .1s both}
+#cover.go .env-stage{animation:riseIn 1.1s cubic-bezier(.2,.9,.3,1.1) .3s both}
+@keyframes inL{from{transform:translateX(-130%);opacity:0}to{transform:none;opacity:1}}
+@keyframes inR{from{transform:translateX(130%);opacity:0}to{transform:none;opacity:1}}
+@keyframes dropIn{from{transform:translateY(-40px);opacity:0}to{transform:none;opacity:1}}
+@keyframes riseIn{from{transform:translateY(50px) scale(.92);opacity:0}to{transform:none;opacity:1}}
+
+.char .body{transform-origin:100px 392px;animation:sway 4.8s ease-in-out infinite alternate}
+.char .head{transform-origin:100px 112px;animation:bow 5s ease-in-out 2.4s infinite}
+.char .arms{transform-origin:100px 190px;animation:armsUp 5s ease-in-out 2.4s infinite}
+.char.groom .head,.char.groom .arms{animation-delay:2.7s}
+.char .eyes{transform-origin:100px 79px;animation:blink 4.6s infinite}
+@keyframes sway{from{transform:rotate(-.9deg)}to{transform:rotate(.9deg)}}
+@keyframes bow{0%,50%,100%{transform:rotate(0)}64%,82%{transform:rotate(10deg) translateY(3px)}}
+@keyframes armsUp{0%,50%,100%{transform:translateY(0) scale(1)}64%,82%{transform:translateY(-4px) scale(1.04)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+
+#cover.opening .char{animation:none;opacity:0;transition:opacity .8s ease .15s,transform .9s ease;transform:translateY(40px)}
+#cover.opening .cv-title{animation:none;opacity:0;transition:opacity .5s ease}
+#cover.opening .char .head{animation:none;transform:rotate(14deg) translateY(4px);transition:transform .45s ease}
+#cover.opening .bubble{animation:none;opacity:0;transition:opacity .3s}
+#cover.opening .env-stage{animation:none}
+#cover{transition:opacity .9s ease,visibility .9s ease}
+
+@media (min-width:900px) and (min-aspect-ratio:1/1){
+  #cover{grid-template-columns:1fr auto 1fr;grid-template-rows:auto minmax(0,1fr);
+    grid-template-areas:"title title title" "bride stage groom";align-items:end;padding-bottom:3vh}
+  .env-stage{width:min(32vw,390px);height:min(60vh,540px);align-self:center}
+  .seal{width:124px;height:124px}
+  .char{height:min(68vh,600px);margin:0}
+  .char.bride{justify-self:center;margin-right:0}.char.groom{justify-self:center;margin-left:0}
+  .tap-hint{font-size:12px;letter-spacing:2.5px}
+}
+@media (max-height:620px) and (max-width:900px){
+  .cv-title{padding-top:20px}.cv-welcome{font-size:30px}.cv-sub{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  #cover.go .char,#cover.go .cv-title,#cover.go .env-stage{animation:none}
+  #cover.go .bubble{animation:none;transform:translateX(-50%) scale(1)}
+}

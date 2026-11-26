@@ -25,13 +25,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Rozha+One&family=Tiro+Devanagari+Hindi&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="preload" as="image" href="assets/img/stamp.png"/>
 <link rel="stylesheet" href="css/styles.css"/>
 <link rel="stylesheet" href="css/effects.css"/>
+<link rel="stylesheet" href="css/welcome.css"/>
 </head>
 <body>
 
+<!-- ============ LOADER ============ -->
+<div id="loader" role="status" aria-live="polite">
+  <div class="ld-ring"><span class="ld-om">ॐ</span></div>
+  <div class="ld-names">Deepa <i>&amp;</i> Aman</div>
+  <div class="ld-text dv">निमंत्रण तैयार हो रहा है…</div>
+  <div class="ld-bar"><b id="ldFill"></b></div>
+</div>
+
 <!-- ============ AUDIO ============ -->
-<audio id="bgm" loop preload="auto" src="assets/audio/devotional.mp3"></audio>
+<audio id="bgm" loop preload="none" src="assets/audio/devotional.mp3"></audio>
 
 <!-- ============ TOP BAR ============ -->
 <div class="topbar" id="topbar">
@@ -44,6 +54,85 @@
 
 <!-- ============ ENVELOPE COVER ============ -->
 <div id="cover">
+  <div class="cv-title">
+    <div class="cv-guest dv" id="guest" hidden></div>
+    <div class="cv-welcome dv-display">स्वागतम्</div>
+    <div class="cv-sub dv">आपका हार्दिक स्वागत है</div>
+  </div>
+  <div class="char bride"><span class="bubble dv">नमस्ते</span><svg class="char-svg" viewBox="0 0 200 400" aria-label="Bride welcoming with folded hands"><defs><linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dd9a"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#9d7b2f"/></linearGradient><linearGradient id="lehB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cf2c47"/><stop offset="1" stop-color="#85102c"/></linearGradient></defs>
+<ellipse cx="100" cy="392" rx="72" ry="7" fill="rgba(0,0,0,.28)"/>
+<g class="body">
+<path d="M72 200 L128 200 C150 260 178 320 188 384 Q100 398 12 384 C22 320 50 260 72 200Z" fill="url(#lehB)"/>
+<path d="M15 370 Q100 386 185 370 L188 384 Q100 398 12 384Z" fill="url(#gB)"/>
+<g fill="#f3dd9a" opacity=".85"><circle cx="60" cy="330" r="3"/><circle cx="100" cy="340" r="3.5"/><circle cx="140" cy="330" r="3"/><circle cx="80" cy="290" r="2.5"/><circle cx="120" cy="290" r="2.5"/><circle cx="100" cy="260" r="2.5"/><circle cx="40" cy="355" r="2.5"/><circle cx="160" cy="355" r="2.5"/></g>
+<path d="M70 126 Q100 138 130 126 L135 168 Q137 192 128 204 L72 204 Q63 192 65 168Z" fill="#a8183a"/>
+<path d="M66 176 Q100 188 134 176" fill="none" stroke="url(#gB)" stroke-width="3"/>
+<rect x="68" y="196" width="64" height="9" rx="3" fill="url(#gB)"/>
+<rect x="90" y="104" width="20" height="30" rx="8" fill="#e8b88f"/>
+<path d="M130 118 Q162 150 152 252 Q142 272 128 262 Q140 190 118 140Z" fill="#d9304e" opacity=".94"/>
+<path d="M130 118 Q162 150 152 252" fill="none" stroke="url(#gB)" stroke-width="2.5"/>
+<path d="M80 128 Q100 156 120 128" fill="none" stroke="url(#gB)" stroke-width="4" stroke-linecap="round"/><circle cx="100" cy="150" r="4.5" fill="#d9304e" stroke="#c9a24a" stroke-width="1.5"/>
+<g class="head">
+<ellipse cx="100" cy="72" rx="38" ry="40" fill="#2a1410"/>
+<ellipse cx="100" cy="82" rx="27" ry="31" fill="#f2c7a0"/>
+<path d="M72 70 Q76 40 100 40 Q124 40 128 70 Q112 56 100 58 Q88 56 72 70Z" fill="#2a1410"/>
+<path d="M58 90 Q56 36 100 30 Q144 36 142 90 Q146 130 152 164 L128 152 Q124 120 128 80 Q126 46 100 44 Q74 46 72 80 Q76 120 72 152 L48 164 Q54 130 58 90Z" fill="#d9304e"/>
+<path d="M58 90 Q56 36 100 30 Q144 36 142 90" fill="none" stroke="url(#gB)" stroke-width="2.5"/>
+<path d="M100 44 V58" stroke="url(#gB)" stroke-width="1.8"/><circle cx="100" cy="62" r="4" fill="url(#gB)"/><circle cx="100" cy="62" r="1.6" fill="#d9304e"/>
+<path d="M79 70 Q87 65 94 69" fill="none" stroke="#2a1410" stroke-width="2.2" stroke-linecap="round"/><path d="M121 70 Q113 65 106 69" fill="none" stroke="#2a1410" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="100" cy="71" r="2.4" fill="#c0122f"/>
+<g class="eyes"><ellipse cx="87" cy="79" rx="4.4" ry="3.2" fill="#2a1410"/><ellipse cx="113" cy="79" rx="4.4" ry="3.2" fill="#2a1410"/><circle cx="88.2" cy="78" r="1.1" fill="#fff"/><circle cx="114.2" cy="78" r="1.1" fill="#fff"/></g><circle cx="79" cy="93" r="7" fill="#e87a8a" opacity=".3"/><circle cx="121" cy="93" r="7" fill="#e87a8a" opacity=".3"/><path d="M100 82 Q97.5 91 101.5 91.5" fill="none" stroke="#c98f68" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M91 99 Q100 108 109 99 Q100 103 91 99Z" fill="#b3263d" stroke="#a3283b" stroke-width="1.6" stroke-linejoin="round"/>
+<circle cx="72" cy="92" r="4" fill="url(#gB)"/><path d="M72 96 v8" stroke="#c9a24a" stroke-width="1.5"/><circle cx="72" cy="106" r="2.2" fill="#c9a24a"/>
+<circle cx="128" cy="92" r="4" fill="url(#gB)"/><path d="M128 96 v8" stroke="#c9a24a" stroke-width="1.5"/><circle cx="128" cy="106" r="2.2" fill="#c9a24a"/>
+</g>
+<g class="arms">
+<path d="M70 130 Q48 162 78 178" fill="none" stroke="#a8183a" stroke-width="17" stroke-linecap="round"/>
+<path d="M130 130 Q152 162 122 178" fill="none" stroke="#a8183a" stroke-width="17" stroke-linecap="round"/>
+<path d="M78 170 Q88 174 97 166" fill="none" stroke="#f2c7a0" stroke-width="12" stroke-linecap="round"/>
+<path d="M122 170 Q112 174 103 166" fill="none" stroke="#f2c7a0" stroke-width="12" stroke-linecap="round"/>
+<path d="M82 168 v10 M88 170 v10 M118 168 v10 M112 170 v10" stroke="#e8c979" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M100 138 Q115 158 100 182 Q85 158 100 138Z" fill="#f2c7a0" stroke="#dba57d" stroke-width="1.5"/><path d="M100 146 V178" stroke="#dba57d" stroke-width="1.2"/>
+</g>
+</g></svg></div>
+  <div class="char groom"><span class="bubble dv">पधारिए</span><svg class="char-svg" viewBox="0 0 200 400" aria-label="Groom welcoming with folded hands"><defs><linearGradient id="gG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dd9a"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#9d7b2f"/></linearGradient></defs>
+<ellipse cx="100" cy="392" rx="72" ry="7" fill="rgba(0,0,0,.28)"/>
+<g class="body">
+<rect x="76" y="250" width="23" height="124" rx="8" fill="#f7efdc"/><rect x="101" y="250" width="23" height="124" rx="8" fill="#f7efdc"/>
+<path d="M70 372 h30 q8 6 6 14 h-38 q0 -10 2 -14Z" fill="url(#gG)"/><path d="M100 372 h30 q2 4 2 14 h-38 q-2 -8 6 -14Z" fill="url(#gG)"/>
+<path d="M64 124 Q100 138 136 124 L144 200 L154 308 Q100 322 46 308 L56 200Z" fill="#f5e4bb"/>
+<path d="M46 308 Q100 322 154 308 L153 298 Q100 312 47 298Z" fill="url(#gG)"/>
+<path d="M100 134 V312" stroke="#c9a24a" stroke-width="2"/>
+<g fill="url(#gG)"><circle cx="100" cy="208" r="3.2"/><circle cx="100" cy="232" r="3.2"/><circle cx="100" cy="256" r="3.2"/><circle cx="100" cy="280" r="3.2"/></g>
+<path d="M60 205 Q100 218 140 205" fill="none" stroke="url(#gG)" stroke-width="3"/>
+<rect x="90" y="104" width="20" height="30" rx="8" fill="#e8b88f"/>
+<path d="M64 124 Q100 142 136 124 L142 150 Q100 170 58 150Z" fill="#7a1f2b"/>
+<path d="M60 144 L50 280 L70 282 L76 156Z" fill="#7a1f2b"/><path d="M50 270 L70 272" stroke="url(#gG)" stroke-width="4"/>
+<path d="M78 124 Q100 178 122 124" fill="none" stroke="#f29a1f" stroke-width="10" stroke-dasharray="1 9" stroke-linecap="round"/>
+<path d="M78 124 Q100 178 122 124" fill="none" stroke="#ffd36b" stroke-width="5" stroke-dasharray="1 9" stroke-dashoffset="5" stroke-linecap="round"/>
+<g class="head">
+<circle cx="73" cy="84" r="6" fill="#f2c7a0"/><circle cx="127" cy="84" r="6" fill="#f2c7a0"/>
+<ellipse cx="100" cy="82" rx="27" ry="31" fill="#f2c7a0"/>
+<path d="M60 72 Q60 30 100 28 Q140 30 140 72 Q130 52 100 50 Q70 52 60 72Z" fill="#7a1f2b"/>
+<ellipse cx="100" cy="36" rx="31" ry="14" fill="#8a2433"/>
+<path d="M64 58 Q100 38 136 58" fill="none" stroke="url(#gG)" stroke-width="3"/><path d="M62 66 Q100 46 138 66" fill="none" stroke="url(#gG)" stroke-width="2"/><path d="M72 40 Q100 28 128 40" fill="none" stroke="#c9a24a" stroke-width="2"/>
+<path d="M100 30 Q94 12 104 2 Q112 14 106 30Z" fill="url(#gG)"/><circle cx="100" cy="48" r="4.5" fill="#d9304e" stroke="#c9a24a" stroke-width="1.6"/>
+<path d="M100 56 V68" stroke="#d9304e" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="73" r="1.6" fill="#f3dd9a"/>
+<path d="M78 70 Q87 64 95 68" fill="none" stroke="#2a1410" stroke-width="3" stroke-linecap="round"/><path d="M122 70 Q113 64 105 68" fill="none" stroke="#2a1410" stroke-width="3" stroke-linecap="round"/>
+<g class="eyes"><ellipse cx="87" cy="79" rx="4.4" ry="3.2" fill="#2a1410"/><ellipse cx="113" cy="79" rx="4.4" ry="3.2" fill="#2a1410"/><circle cx="88.2" cy="78" r="1.1" fill="#fff"/><circle cx="114.2" cy="78" r="1.1" fill="#fff"/></g><circle cx="79" cy="93" r="7" fill="#e87a8a" opacity=".3"/><circle cx="121" cy="93" r="7" fill="#e87a8a" opacity=".3"/><path d="M100 82 Q97.5 91 101.5 91.5" fill="none" stroke="#c98f68" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M85 95 Q93 90 100 93.5 Q107 90 115 95 Q106 100 100 97 Q94 100 85 95Z" fill="#2a1410"/>
+<path d="M91 102 Q100 110 109 102" fill="none" stroke="#a3283b" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<g class="arms">
+<path d="M66 130 Q44 164 78 180" fill="none" stroke="#f5e4bb" stroke-width="19" stroke-linecap="round"/>
+<path d="M134 130 Q156 164 122 180" fill="none" stroke="#f5e4bb" stroke-width="19" stroke-linecap="round"/>
+<path d="M66 134 Q48 164 76 178" fill="none" stroke="#c9a24a" stroke-width="2" opacity=".7"/>
+<path d="M78 172 Q88 176 97 167" fill="none" stroke="#f2c7a0" stroke-width="12" stroke-linecap="round"/>
+<path d="M122 172 Q112 176 103 167" fill="none" stroke="#f2c7a0" stroke-width="12" stroke-linecap="round"/>
+<path d="M80 172 v8 M118 172 v8" stroke="url(#gG)" stroke-width="3" stroke-linecap="round"/>
+<path d="M100 138 Q115 158 100 182 Q85 158 100 138Z" fill="#f2c7a0" stroke="#dba57d" stroke-width="1.5"/><path d="M100 146 V178" stroke="#dba57d" stroke-width="1.2"/>
+</g>
+</g></svg></div>
   <div class="env-stage">
     <div class="envelope">
       <div class="env-flower tl"></div>
@@ -95,7 +184,7 @@
     <div class="corner br" style="background-image:url('assets/img/peony.jpg')"></div>
     <div class="scene-inner">
       <div class="photo-frame reveal">
-        <img src="assets/img/main-image.png" alt="Deepa and Aman" id="couplePhoto"
+        <img src="assets/img/main-image.webp" alt="Deepa and Aman" id="couplePhoto"
              onerror="this.onerror=null;this.src='assets/img/couple-placeholder.svg'"/>
       </div>
       <div class="eyebrow reveal"><span class="dv">शुभ विवाह</span> &nbsp;•&nbsp; The Wedding Of</div>
@@ -331,5 +420,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/effects.js"></script>
+<script src="js/welcome.js"></script>
 </body>
 </html>
