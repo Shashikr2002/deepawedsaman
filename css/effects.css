@@ -1,0 +1,92 @@
+/* =========================================================
+   Premium motion layer — opening, ambience, scroll effects
+   ========================================================= */
+
+/* ---------- cinematic envelope opening ---------- */
+.env-stage{transition:transform 1.6s cubic-bezier(.5,0,.2,1), filter 1.2s ease}
+#cover.opening .env-stage{transform:scale(1.9) translateY(8%);filter:blur(3px)}
+#cover::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:radial-gradient(circle at 50% 40%, rgba(255,240,190,.95), rgba(243,221,154,.55) 35%, transparent 70%);
+  transition:opacity 1s ease .25s;
+}
+#cover.opening::after{opacity:1}
+.envelope::before{ /* soft sheen sweeping over the paper */
+  content:"";position:absolute;inset:-20% -60%;z-index:3;pointer-events:none;
+  background:linear-gradient(100deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);
+  transform:translateX(-60%);animation:sheen 5s ease-in-out 1.2s infinite;
+}
+@keyframes sheen{0%,60%{transform:translateX(-60%)}100%{transform:translateX(60%)}}
+.tap-hint{text-shadow:0 1px 0 rgba(255,255,255,.4)}
+
+/* ---------- overlay canvases ---------- */
+#dust{position:fixed;inset:0;z-index:88;pointer-events:none}
+#fx{position:fixed;inset:0;z-index:140;pointer-events:none}
+
+/* ---------- scroll progress + section dots ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:125;transform-origin:0 50%;transform:scaleX(0);
+  background:var(--gold-grad);box-shadow:0 0 10px rgba(243,221,154,.8)}
+#dots{position:fixed;right:10px;top:50%;transform:translateY(-50%);z-index:120;display:flex;flex-direction:column;gap:11px;
+  opacity:0;transition:opacity .8s ease}
+#dots.show{opacity:1}
+#dots button{width:8px;height:8px;border-radius:50%;border:1px solid var(--gold);background:rgba(40,8,14,.45);padding:0;cursor:pointer;
+  transition:all .35s ease}
+#dots button.on{background:var(--gold-bright);transform:scale(1.5);box-shadow:0 0 10px rgba(243,221,154,.9)}
+
+/* ---------- toran (hanging marigold strands) ---------- */
+.toran{position:absolute;top:0;left:0;right:0;height:150px;z-index:2;pointer-events:none;display:flex;justify-content:space-around;padding:0 4%}
+.toran .strand{transform-origin:50% 0;animation:swing 4.2s ease-in-out infinite;display:flex;flex-direction:column;align-items:center}
+.toran .strand i{display:block;width:1px;background:linear-gradient(var(--gold),var(--gold-dark))}
+.toran .strand b{display:block;border-radius:50%;margin-top:-1px;
+  background:radial-gradient(circle at 35% 30%,#ffd36b,#f29a1f 60%,#b85c0a);box-shadow:0 2px 4px rgba(0,0,0,.35)}
+.toran .strand b.s{width:11px;height:11px}.toran .strand b.m{width:16px;height:16px}
+@keyframes swing{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+
+/* ---------- Ganesha aura ---------- */
+.ganesha-wrap{position:relative;width:fit-content;margin:0 auto}
+.aura{position:absolute;left:50%;top:50%;width:min(92vw,460px);aspect-ratio:1;transform:translate(-50%,-50%);z-index:-1;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg,rgba(243,221,154,.22) 0 5deg,transparent 5deg 15deg);
+  -webkit-mask-image:radial-gradient(circle,#000 8%,transparent 68%);mask-image:radial-gradient(circle,#000 8%,transparent 68%);
+  animation:rays 40s linear infinite}
+.aura::after{content:"";position:absolute;inset:26%;border-radius:50%;
+  background:radial-gradient(circle,rgba(243,221,154,.45),transparent 70%);animation:glow 3.6s ease-in-out infinite}
+@keyframes rays{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes glow{0%,100%{opacity:.55;transform:scale(.9)}50%{opacity:1;transform:scale(1.1)}}
+
+/* ---------- hero ---------- */
+.photo-frame img{transform:scale(1.12);animation:kenburns 16s ease-in-out infinite alternate}
+@keyframes kenburns{to{transform:scale(1.22) translate(-2%,-2%)}}
+.photo-frame::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.28) 50%,transparent 60%);transform:translateX(-120%);animation:sheen2 6s ease-in-out 2s infinite}
+@keyframes sheen2{0%,55%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.cd-box{transition:transform .25s ease}
+.cd-box.tick{transform:translateY(-3px) scale(1.06)}
+
+/* ---------- timeline ---------- */
+.timeline::before{transform-origin:top;transform:scaleY(var(--p,0))}
+.tl-item .dot{transition:transform .5s cubic-bezier(.3,1.6,.5,1),box-shadow .5s}
+.tl-item.hit .dot{transform:scale(1.25);box-shadow:0 0 0 7px rgba(201,162,74,.28),0 0 18px rgba(201,162,74,.7)}
+.tl-card{transition:transform .35s ease, box-shadow .35s ease}
+.tl-card:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(140,90,40,.24)}
+.btn-cal{margin-top:26px}
+
+/* ---------- cards: tilt + shine ---------- */
+.person-card{transform-style:preserve-3d;transition:transform .2s ease-out, box-shadow .3s}
+.person-card:hover{box-shadow:0 22px 44px rgba(0,0,0,.4),0 0 24px rgba(201,162,74,.25)}
+.divider .line{transform-origin:center}
+
+/* ---------- gold shimmer for key headings ---------- */
+.venue-name,.pname,.dp-date{background-size:200% auto;animation:shimmer 6s linear infinite}
+
+/* ---------- final share ---------- */
+.btn-wa{margin-top:18px;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;box-shadow:0 10px 26px rgba(18,140,126,.4)}
+.btn-wa:hover{background-position:right center}
+
+@media(max-width:680px){
+  #dots{right:5px;gap:9px}#dots button{width:6px;height:6px}
+  .toran{height:110px}
+}
+@media(prefers-reduced-motion:reduce){
+  #cover.opening .env-stage{transform:none;filter:none}
+  .toran .strand,.aura,.photo-frame img{animation:none!important}
+}
