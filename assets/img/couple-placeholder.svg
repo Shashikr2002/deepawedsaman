@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7eeda"/>
+      <stop offset="1" stop-color="#efd9b8"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8c979"/>
+      <stop offset="0.5" stop-color="#c9a24a"/>
+      <stop offset="1" stop-color="#9d7b2f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect x="24" y="24" width="752" height="952" fill="none" stroke="url(#gold)" stroke-width="4" rx="12"/>
+  <rect x="40" y="40" width="720" height="920" fill="none" stroke="url(#gold)" stroke-width="1.5" rx="8" opacity="0.7"/>
+  <g fill="none" stroke="url(#gold)" stroke-width="3" opacity="0.9">
+    <path d="M400 360 c-55 -70 -150 -55 -150 15 c0 70 110 120 150 150 c40 -30 150 -80 150 -150 c0 -70 -95 -85 -150 -15 z"/>
+  </g>
+  <text x="400" y="640" text-anchor="middle" font-family="Georgia, serif" font-size="40" fill="#8a6a28" letter-spacing="2">Your Photo Here</text>
+  <text x="400" y="700" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#b08a3a">आपकी तस्वीर यहाँ लगाएँ</text>
+  <text x="400" y="760" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#b89a5a">( replace assets/img/couple.jpg )</text>
+</svg>

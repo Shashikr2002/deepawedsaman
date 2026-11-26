@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>शुभ विवाह • Deepa &amp; Aman — Wedding Invitation</title>
+<meta name="description" content="Royal wedding invitation of Deepa & Aman — Friday, 11 December 2026, Delhi. Join us with your blessings."/>
+<meta name="theme-color" content="#5e1420"/>
+<!-- Social share preview (WhatsApp / Facebook / Twitter) -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Deepa &amp; Aman — Wedding Invitation"/>
+<meta property="og:title" content="शुभ विवाह • Deepa &amp; Aman"/>
+<meta property="og:description" content="You are cordially invited — Friday, 11 December 2026, Delhi. Join us with your blessings."/>
+<meta property="og:url" content="https://wedding-new-pink.vercel.app/"/>
+<meta property="og:image" content="https://wedding-new-pink.vercel.app/assets/img/whatsapp.jpg"/>
+<meta property="og:image:secure_url" content="https://wedding-new-pink.vercel.app/assets/img/whatsapp.jpg"/>
+<meta property="og:image:type" content="image/jpeg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="628"/>
+<meta property="og:image:alt" content="Deepa &amp; Aman — 11 December 2026"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="शुभ विवाह • Deepa &amp; Aman"/>
+<meta name="twitter:description" content="You are cordially invited — Friday, 11 December 2026, Delhi."/>
+<meta name="twitter:image" content="https://wedding-new-pink.vercel.app/assets/img/whatsapp.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Rozha+One&family=Tiro+Devanagari+Hindi&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<!-- ============ AUDIO ============ -->
+<audio id="bgm" loop preload="auto" src="assets/audio/devotional.mp3"></audio>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar" id="topbar">
+  <button class="music-btn paused" id="musicBtn" aria-label="Toggle music" title="Music">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <g class="wave"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></g>
+    </svg>
+  </button>
+</div>
+
+<!-- ============ ENVELOPE COVER ============ -->
+<div id="cover">
+  <div class="env-stage">
+    <div class="envelope">
+      <div class="env-flower tl"></div>
+      <div class="env-flower tr"></div>
+      <div class="env-flower bl"></div>
+      <div class="env-flower br"></div>
+      <div class="env-inner-frame"></div>
+      <div class="env-content">
+        <div class="env-hi-top">॥ शुभ विवाह ॥</div>
+        <div class="env-script">You are cordially invited</div>
+        <div class="env-names">Deepa <span class="amp">&amp;</span> Aman</div>
+      </div>
+    </div>
+    <div class="flap"></div>
+    <div class="seal" id="seal" role="button" tabindex="0" aria-label="Open invitation">
+      <img src="assets/img/stamp.png" alt="D &amp; A monogram"/>
+    </div>
+    <div class="tap-hint">— Tap the seal to open • खोलने हेतु स्पर्श करें —</div>
+  </div>
+</div>
+
+<!-- ============ PETALS LAYER ============ -->
+<div id="petals"></div>
+
+<!-- ============ INVITATION ============ -->
+<main class="invitation" id="invitation">
+
+  <!-- 1. INVOCATION -->
+  <section class="scene bg-maroon" id="s-invocation">
+    <div class="corner tl" style="background-image:url('assets/img/marigold.jpg')"></div>
+    <div class="corner br" style="background-image:url('assets/img/marigold.jpg')"></div>
+    <div class="scene-inner">
+      <img class="ganesha reveal" src="assets/img/ganesha.svg" alt="Lord Ganesha"/>
+      <div class="head dv reveal">॥ ॐ श्री गणेशाय नमः ॥</div>
+      <div class="divider reveal"><span class="line"></span><span class="lotus">✦</span><span class="dot"></span><span class="lotus">✦</span><span class="line"></span></div>
+      <p class="shloka reveal">
+        वक्रतुण्ड महाकाय, सूर्यकोटि समप्रभः।<br/>
+        निर्विघ्नं कुरु मे देव, सर्वकार्येषु सर्वदा॥
+      </p>
+    </div>
+    <div class="scroll-cue"><div class="mouse"></div><span class="lbl">Scroll</span></div>
+  </section>
+
+  <!-- 2. HERO -->
+  <section class="scene bg-cream" id="s-hero">
+    <div class="corner tl" style="background-image:url('assets/img/peony.jpg')"></div>
+    <div class="corner tr" style="background-image:url('assets/img/rose.jpg')"></div>
+    <div class="corner bl" style="background-image:url('assets/img/rose.jpg')"></div>
+    <div class="corner br" style="background-image:url('assets/img/peony.jpg')"></div>
+    <div class="scene-inner">
+      <div class="photo-frame reveal">
+        <img src="assets/img/main-image.png" alt="Deepa and Aman" id="couplePhoto"
+             onerror="this.onerror=null;this.src='assets/img/couple-placeholder.svg'"/>
+      </div>
+      <div class="eyebrow reveal"><span class="dv">शुभ विवाह</span> &nbsp;•&nbsp; The Wedding Of</div>
+      <h1 class="display reveal">Deepa <span class="amp">&amp;</span> Aman</h1>
+      <div class="name-dv reveal">दीपा एवं अमन</div>
+      <div class="divider reveal"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+
+      <div class="date-plaque reveal">
+        <span class="dp-day">Friday &nbsp;•&nbsp; शुक्रवार</span>
+        <span class="dp-date">11 December 2026</span>
+        <span class="dp-place">Delhi, India</span>
+      </div>
+
+      <div class="countdown reveal" id="countdown">
+        <div class="cd-box"><div class="num" id="cd-d">00</div><div class="lab">Days</div></div>
+        <div class="cd-box"><div class="num" id="cd-h">00</div><div class="lab">Hours</div></div>
+        <div class="cd-box"><div class="num" id="cd-m">00</div><div class="lab">Mins</div></div>
+        <div class="cd-box"><div class="num" id="cd-s">00</div><div class="lab">Secs</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BRIDE & GROOM -->
+  <section class="scene bg-emerald" id="s-couple">
+    <div class="corner tl" style="background-image:url('assets/img/lotus.jpg')"></div>
+    <div class="corner br" style="background-image:url('assets/img/lotus.jpg')"></div>
+    <div class="scene-inner">
+      <div class="eyebrow reveal"><span class="dv">वधू एवं वर</span> &nbsp;•&nbsp; The Bride &amp; The Groom</div>
+      <div class="divider reveal"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+
+      <div class="couple-grid">
+        <div class="person-card reveal">
+          <div class="role"><span class="role-dv">वधू</span><span class="role-en">The Bride</span></div>
+          <div class="pname">Deepa</div>
+          <div class="pname-dv">आयु. दीपा</div>
+          <p class="lineage">सुपुत्री: श्रीमती चन्द्रकला देवी<br/>एवं श्री रवि कुमार गुप्ता।</p>
+        </div>
+        <div class="couple-mid reveal"><span class="weds">weds</span></div>
+        <div class="person-card reveal">
+          <div class="role"><span class="role-dv">वर</span><span class="role-en">The Groom</span></div>
+          <div class="pname">Aman</div>
+          <div class="pname-dv">चि. अमन</div>
+          <p class="lineage">सुपुत्र: श्रीमती इसरावती देवी<br/>एवं स्व. श्री ओम नमो नारायण।</p>
+        </div>
+      </div>
+
+      <p class="invited-by reveal">आमंत्रक: श्रीमती चन्द्रकला देवी धर्मपत्नी<br/>श्री रवि कुमार गुप्ता।</p>
+    </div>
+  </section>
+
+  <!-- 4. SCHEDULE -->
+  <section class="scene bg-cream" id="s-schedule">
+    <div class="corner tr" style="background-image:url('assets/img/marigold.jpg')"></div>
+    <div class="corner bl" style="background-image:url('assets/img/marigold.jpg')"></div>
+    <div class="scene-inner">
+      <div class="eyebrow reveal"><span class="dv">मांगलिक कार्यक्रम</span> &nbsp;•&nbsp; Wedding Schedule</div>
+      <div class="divider reveal"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="dot"><span></span></div>
+          <div class="tl-card">
+            <div class="tl-left"><div class="ev">सुन्दरकाण्ड पाठ <small>Sundarkand Path</small></div><div class="date">मंगलवार, 8 दिसम्बर 2026 • Tue, 8 Dec</div></div>
+            <div class="tl-time">11:00 AM</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="dot"><span></span></div>
+          <div class="tl-card">
+            <div class="tl-left"><div class="ev">तेलबान <small>Telban</small></div><div class="date">बुधवार, 9 दिसम्बर 2026 • Wed, 9 Dec</div></div>
+            <div class="tl-time">5:00 PM</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="dot"><span></span></div>
+          <div class="tl-card">
+            <div class="tl-left"><div class="ev">हल्दी <small>Haldi</small></div><div class="date">वीरवार, 10 दिसम्बर 2026 • Thu, 10 Dec</div></div>
+            <div class="tl-time">11:00 AM</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="dot"><span></span></div>
+          <div class="tl-card">
+            <div class="tl-left"><div class="ev">मेहन्दी <small>Mehendi</small></div><div class="date">वीरवार, 10 दिसम्बर 2026 • Thu, 10 Dec</div></div>
+            <div class="tl-time">6:00 PM</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="dot"><span></span></div>
+          <div class="tl-card">
+            <div class="tl-left"><div class="ev">बारात स्वागत <small>Baraat Welcome</small></div><div class="date">शुक्रवार, 11 दिसम्बर 2026 • Fri, 11 Dec</div></div>
+            <div class="tl-time">7:00 PM</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="dot"><span></span></div>
+          <div class="tl-card">
+            <div class="tl-left"><div class="ev">प्रीतिभोज <small>Wedding Dinner</small></div><div class="date">शुक्रवार, 11 दिसम्बर 2026 • Fri, 11 Dec</div></div>
+            <div class="tl-time">9:00 PM</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="dot"><span></span></div>
+          <div class="tl-card">
+            <div class="tl-left"><div class="ev">विदाई <small>Vidaai</small></div><div class="date">शुक्रवार, 11 दिसम्बर 2026 • Fri, 11 Dec</div></div>
+            <div class="tl-time">तारों की छाँव में</div>
+          </div>
+        </div>
+      </div>
+      <p class="ist-note reveal">सभी समय भारतीय मानक समय (IST) अनुसार हैं • All timings in IST.</p>
+    </div>
+  </section>
+
+  <!-- 5. VENUE -->
+  <section class="scene bg-maroon" id="s-venue">
+    <div class="corner tl" style="background-image:url('assets/img/peony.jpg')"></div>
+    <div class="corner br" style="background-image:url('assets/img/peony.jpg')"></div>
+    <div class="scene-inner">
+      <div class="eyebrow reveal"><span class="dv">विवाह स्थल</span> &nbsp;•&nbsp; The Venue</div>
+      <div class="venue-name reveal">Green Lounge Fusion Banquet</div>
+      <div class="venue-name-dv reveal">ग्रीन लौन्ज फ्यूज़न बैंक्वेट</div>
+      <div class="divider reveal"><span class="line"></span><span class="lotus">✦</span><span class="line"></span></div>
+      <p class="venue-addr reveal">B-6, G.T. Karnal Road,<br/>Delhi – 110033.</p>
+      <a class="btn-gold reveal" id="venueMapBtn" href="#s-directions">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        View Location
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. INVITATION MESSAGE + FAMILY -->
+  <section class="scene bg-cream" id="s-message">
+    <div class="corner tl" style="background-image:url('assets/img/rose.jpg')"></div>
+    <div class="corner tr" style="background-image:url('assets/img/rose.jpg')"></div>
+    <div class="corner bl" style="background-image:url('assets/img/lotus.jpg')"></div>
+    <div class="corner br" style="background-image:url('assets/img/lotus.jpg')"></div>
+    <div class="scene-inner">
+      <div class="head dv reveal" style="color:var(--maroon-2)">॥ श्री गणेशाय नमः ॥</div>
+      <p class="shloka reveal">विघ्न हरण मंगल करण, श्री गणनायक महाराज।<br/>प्रथम निमंत्रण आपको पूरण किजो काज॥</p>
+      <div class="divider reveal"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+      <p class="body-text dv reveal" style="max-width:720px;margin:0 auto">
+        परमपिता परमात्मा की असीम अनुकम्पा से श्रीमती चन्द्रकला देवी धर्मपत्नी श्री रवि कुमार गुप्ता अपनी सुपुत्री आयु० दीपा एवं चि० अमन (सुपुत्र श्रीमती इसरावती जी एवं स्व. श्री ओम नमो नारायण जी) के शुभ विवाहोत्सव की मधुर बेला पर आपको सादर आमंत्रित करते हैं। कृपया समय पर पधारकर वर-वधू को आशीर्वाद प्रदान कर हमें अनुगृहीत करें।
+      </p>
+      <div class="darshan-label reveal" style="margin-top:28px">दर्शनाभिलाषी</div>
+      <ul class="names-list reveal">
+        <li>श्री सुरेश चन्द गुप्ता</li>
+        <li>श्री मेवा लाल गुप्ता</li>
+        <li>सुजीत</li>
+        <li>अजीत</li>
+        <li>सत्यजीत</li>
+        <li>राजकुमार</li>
+        <li>नीरज</li>
+        <li>अमित</li>
+        <li>धीरज</li>
+        <li>आकाश</li>
+        <li>अंश</li>
+      </ul>
+      <p class="body-text dv reveal" style="margin-top:14px">एवं समस्त गुप्ता परिवार।</p>
+    </div>
+  </section>
+
+  <!-- 7. CHILDREN'S VERSE (Hindi only) -->
+  <section class="scene bg-emerald" id="s-children">
+    <div class="corner tl" style="background-image:url('assets/img/marigold.jpg')"></div>
+    <div class="corner br" style="background-image:url('assets/img/marigold.jpg')"></div>
+    <div class="scene-inner">
+      <div class="eyebrow reveal"><span class="dv">बाल आग्रह</span></div>
+      <div class="divider reveal"><span class="line"></span><span class="lotus">✦</span><span class="line"></span></div>
+      <p class="verse reveal">
+        हल्दी है चन्दन है,<br/>
+        रिश्तों का बन्धन है,<br/>
+        हमारी बुआ/मौसी की शादी में<br/>
+        आपका अभिनन्दन है।
+      </p>
+      <div class="child-names reveal">— तनिष • त्रियांश • आदविक • आकृति</div>
+    </div>
+  </section>
+
+  <!-- 8. REGARDS -->
+  <section class="scene bg-maroon" id="s-regards">
+    <div class="corner tl" style="background-image:url('assets/img/peony.jpg')"></div>
+    <div class="corner br" style="background-image:url('assets/img/peony.jpg')"></div>
+    <div class="scene-inner">
+      <div class="eyebrow reveal"><span class="dv">विनीत</span> &nbsp;•&nbsp; With Regards</div>
+      <div class="regards-name reveal">गुप्ता परिवार</div>
+      <div class="divider reveal"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+    </div>
+  </section>
+
+  <!-- 9. DIRECTIONS (final, devotional sound) -->
+  <section class="scene bg-emerald" id="s-directions">
+    <div class="corner tl" style="background-image:url('assets/img/lotus.jpg')"></div>
+    <div class="corner tr" style="background-image:url('assets/img/lotus.jpg')"></div>
+    <div class="corner bl" style="background-image:url('assets/img/marigold.jpg')"></div>
+    <div class="corner br" style="background-image:url('assets/img/marigold.jpg')"></div>
+    <div class="scene-inner">
+      <div class="eyebrow reveal"><span class="dv">मार्ग-दर्शन</span> &nbsp;•&nbsp; Directions</div>
+      <h2 class="head reveal">How to Reach the Venue</h2>
+      <div class="divider reveal"><span class="line"></span><span class="lotus">✦</span><span class="line"></span></div>
+
+      <div class="map-wrap reveal">
+        <iframe title="Green Lounge Fusion Banquet location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Green%20Lounge%20Fusion%20Banquet%2C%20B-6%2C%20G.T.%20Karnal%20Road%2C%20Delhi%20110033&output=embed"></iframe>
+      </div>
+
+      <div class="dir-actions">
+        <a class="btn-gold reveal" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/dir/?api=1&destination=Green+Lounge+Fusion+Banquet+B-6+GT+Karnal+Road+Delhi+110033">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          Get Directions
+        </a>
+        <a class="btn-outline reveal" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=Green+Lounge+Fusion+Banquet+GT+Karnal+Road+Delhi+110033">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Open in Maps
+        </a>
+      </div>
+
+      <div class="divider reveal" style="margin-top:34px"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+      <div class="blessing reveal">We await your blessings</div>
+      <div class="blessing-dv reveal">आपकी सादर प्रतीक्षा में</div>
+      <p class="thank reveal">दीपा एवं अमन • 11 दिसम्बर 2026</p>
+      <div class="sound-note reveal" id="soundNote">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        शुभ संगीत सुनने हेतु स्पर्श करें • Tap for music
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
